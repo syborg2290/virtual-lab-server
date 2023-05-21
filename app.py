@@ -1,10 +1,12 @@
 from flask import Flask,request,jsonify
+from flask_cors import CORS
 # from app import brats_mri_axial_slices_generative_diffusion
 from app import liver_tumor_seg
 import torchxrayvision as xrv
 import skimage, torch, torchvision
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
